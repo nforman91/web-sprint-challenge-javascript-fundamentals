@@ -198,14 +198,26 @@ console.log(cuboid.surfaceArea()); // 130
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
-class CuboidMakerTwo{
-
+class CuboidMakerTwo extends CuboidMaker{
+  constructor(attributes){
+    super(attributes);
+     this.lengthTwo = attributes.length;
+     this.widthTwo = attributes.width;
+     this.heightTwo = attributes.height;
+  }
+  volume(){
+    return this.lengthTwo * this.widthTwo * this.heightTwo;
+  }
+  surfaceArea(){
+    return 2 * (this.lengthTwo * this.widthTwo + this.lengthTwo * this.heightTwo + this.widthTwo * this.heightTwo);
+  }
 }
 
+const cuboidTwo = new CuboidMakerTwo(4, 5, 5);
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-// console.log(cuboidTwo.volume()); // 100
-// console.log(cuboidTwo.surfaceArea()); // 130
+console.log(cuboidTwo.volume()); // 100
+console.log(cuboidTwo.surfaceArea()); // 130
 
 
 
