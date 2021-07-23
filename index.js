@@ -17,7 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+/* ***NEEDS RESPONSE*** */
 
 
 
@@ -28,11 +28,13 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
+function summation(number) {
+  // for(let i = 0; i < number.length; i++){
+  // return number + number[i];
+  // }
+}
 
-  }
- 
+// console.log('task 2:', summation(4));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -56,8 +58,11 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(name, sciName){
+    const displayNames = [];
+    zooAnimals.forEach(function(name, sciName) {
+      console.log(`name: ${animal_name}, scientific: ${scientific_name}`);
+    })
   }
   
 
@@ -67,20 +72,28 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(data){
+    const lowerCase = data.map(function(item){
+      return item.animal_name.toLowerCase();
+    });
+    return lowerCase;
   }
-  
+
+  console.log('topic 1.2:', lowerCaseNames(zooAnimals));
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(data){
+    const lowPops = data.filter(function(item){
+      return item.population < 5;
+    });
+    return lowPops;
   }
-  
+
+  console.log('topic 1.3:', lowPopulationAnimals(zooAnimals));  
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -88,10 +101,13 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(data){
+    const totalPop = data.reduce(function(acc, item){
+      return acc + item.population;
+    },0);
   }
   
+  console.log('topic 1.4:', USApop(zooAnimals));
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -101,17 +117,26 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
+  function consume(a, b, cb){
+  //   this.a = a;
+  //   this.b = b;
+  //   this.cb = cb
   }
+
+  // consume.call(this, a, b);
+
+  // console.log('step 1:', consume(a, b));
  
   
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
  // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
   
-function add(/*Your Code Here */){
-    /*Your Code Here*/
+function add(array, consumecb){
+    // const array = [1, 2];
+    // return consumecb(a + b);
   }
+
+// console.log('step 2:', add(array, consumecb));
 
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
