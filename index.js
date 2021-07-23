@@ -29,6 +29,7 @@ myFunction();
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
 function summation(number) {
+
   // for(let i = 0; i < number.length; i++){
   // return number + number[i];
   // }
@@ -107,6 +108,7 @@ const zooAnimals = [
     const totalPop = data.reduce(function(acc, item){
       return acc + item.population;
     },0);
+    return totalPop;
   }
   
   console.log('topic 2.4:', USApop(zooAnimals));
@@ -187,7 +189,11 @@ CuboidMaker.prototype.surfaceArea = function () {
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
-const cuboid = new CuboidMaker(4, 5, 5);
+const cuboid = new CuboidMaker({
+  length: 4,
+  width: 5,
+  height: 5
+});
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
@@ -201,19 +207,20 @@ console.log(cuboid.surfaceArea()); // 130
 class CuboidMakerTwo extends CuboidMaker{
   constructor(attributes){
     super(attributes);
-     this.lengthTwo = attributes.length;
-     this.widthTwo = attributes.width;
-     this.heightTwo = attributes.height;
   }
   volume(){
-    return this.lengthTwo * this.widthTwo * this.heightTwo;
+    return this.length * this.width * this.height;
   }
   surfaceArea(){
-    return 2 * (this.lengthTwo * this.widthTwo + this.lengthTwo * this.heightTwo + this.widthTwo * this.heightTwo);
+    return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
   }
 }
 
-const cuboidTwo = new CuboidMakerTwo(4, 5, 5);
+const cuboidTwo = new CuboidMakerTwo({
+  length: 4,
+  width: 5,
+  height: 5
+});
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
 console.log(cuboidTwo.volume()); // 100

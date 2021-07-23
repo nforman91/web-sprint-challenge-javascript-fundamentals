@@ -26,23 +26,56 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
-***NEEDS RESPONSE***
+.map: 
+-returns a new array
+-needs a return statement
+Use Case for .map: for manipulating/reshaping/converting data
+
+.reduce: 
+-returns a single value
+-needs a return statement
+-needs an accumulator and starting value
+Use Case for .reduce: for addition or multiplication
+
+.filter: 
+-returns a new array
+-contents of returned array are based on a condition (i.e. if true, is added to array; if false, is not added to the array)
+Use Case for .filter: for filtering data based on something that can be equated to a boolean value
 
 2. Explain the difference between a callback and a higher order function.
 
-***NEEDS RESPONSE***
+A callback function is passed into another function as an argument.
+
+A higher order function receives other functions.
 
 3. Explain what a closure is.
 
-***NEEDS RESPONSE***
+A closure is when an inner function reaches outside of its scope to reference a variable in an outer function.
 
 4. Describe the four principles of the 'this' keyword.
 
-***NEEDS RESPONSE***
+Global/Window Binding: 
+-When in the global scope
+-The value of this is a global/window/console object in node (but undefined in strict mode).
+
+Implicit Binding: 
+-When a function is called by a preceding dot
+-The value of this is the object left of the dot.
+
+Explicit Binding: 
+-Whenever the .call, .apply, or .bind methods are used
+-The value of this is explicitly defined.
+    .call: will immediately invoke the function and pass in arguments one by one
+    .apply: will immediately invoke the function and pass in arguments as an array
+    .bind: will pass in arguments one by one, but will not immediately invoke the function, instead returns a new function to be invoked later
+
+New Binding: 
+-Whenever a constructor function is used
+-The value of this is the specific instance of the object that is created & returned by the constructor.
 
 5. Why do we need super() in an extended class?
 
-***NEEDS RESPONSE***
+Super() accesses and calls the functions on an object's parent.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
