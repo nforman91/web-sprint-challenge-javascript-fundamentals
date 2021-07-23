@@ -17,7 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-/* ***NEEDS RESPONSE*** */
+//Topic 1.1 Response: nestedFunction can access internal because it is reaching up to the next level/scope to track it.
 
 
 
@@ -36,7 +36,7 @@ function summation(num) {
   return count;
 }
 
-console.log('task 2:', summation(4));
+console.log('topic 1.2:', summation(4));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
